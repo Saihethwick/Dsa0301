@@ -1,0 +1,12 @@
+import nltk
+nltk.download('averaged_perceptron_tagger')
+sentence = "I am learning NLP in Python"
+tokens = nltk.word_tokenize(sentence)
+pos_tags = nltk.pos_tag(tokens)
+print(pos_tags)
+
+***************************************************************************************************************************8
+[nltk_data] Downloading package averaged_perceptron_tagger to
+[nltk_data]     C:\Users\punni\AppData\Roaming\nltk_data...
+[nltk_data]   Unzipping taggers\averaged_perceptron_tagger.zip.
+[('I', 'PRP'), ('am', 'VBP'), ('learning', 'VBG'), ('NLP', 'NNP'), ('in', 'IN'), ('Python', 'NNP')]
