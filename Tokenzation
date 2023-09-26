@@ -1,0 +1,6 @@
+my_text = " hi i am sai hethwick"  
+  
+print(my_text.split())
+
+******************************************************************
+['hi', 'i', 'am', 'sai', 'hethwick']
