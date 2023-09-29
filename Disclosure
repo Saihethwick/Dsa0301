@@ -1,0 +1,33 @@
+import spacy
+
+# Download and install the 'en_core_web_sm' model
+spacy.cli.download("en_core_web_sm")
+spacy.cli.link("en_core_web_sm", "en")
+
+# Load the model
+nlp = spacy.load("en")
+
+# Sample text data (replace with your actual data)
+text = """
+We disclose that our company's revenue for the year 2022 has increased by 15%.
+According to our financial report, our net profit margin is 10%.
+"""
+
+# Process the text using spaCy
+doc = nlp(text)
+
+# Define keywords for disclosure identification
+disclosure_keywords = ["disclose", "report", "financial report"]
+
+# Initialize a list to store identified disclosures
+disclosures = []
+
+# Iterate through sentences in the text
+for sent in doc.sents:
+    # Check if the sentence contains any of the disclosure keywords
+    if any(keyword in sent.text.lower() for keyword in disclosure_keywords):
+        disclosures.append(sent.text)
+
+# Print identified disclosures
+for idx, disclosure in enumerate(disclosures, start=1):
+    print(f"Disclosure {idx}: {disclosure}")
